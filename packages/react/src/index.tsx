@@ -5,6 +5,7 @@ export const Button = styled('button', {
   fontFamily: '$default',
   height: '$10',
   width: '$40',
+  alignItems: 'center',
 })
 
 export function App() {
