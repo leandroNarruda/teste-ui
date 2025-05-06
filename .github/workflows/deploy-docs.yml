@@ -18,8 +18,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
-      - run: npm ci
+      - run: npm cid
 
       - run: npm run build
         env:
