@@ -21,7 +21,7 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
 
-      - run: npm cid
+      - run: npm ci
 
       - run: npm run build
         env:
