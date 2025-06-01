@@ -1,11 +1,9 @@
-import * as React from "react";
-import type { SVGProps } from "react";
+import type { SVGProps } from 'react'
 const SvgAlarmClockDuotone1 = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={40}
-    height={40}
     fill="none"
+    viewBox="0 0 40 40"
     {...props}
   >
     <g clipPath="url(#alarm-clock-duotone1_svg__a)">
@@ -24,5 +22,5 @@ const SvgAlarmClockDuotone1 = (props: SVGProps<SVGSVGElement>) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default SvgAlarmClockDuotone1;
+)
+export default SvgAlarmClockDuotone1

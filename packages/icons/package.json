@@ -6,9 +6,11 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "prebuild": "npm run generate-icons",
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch",
-    "lint": "eslint src/**/*.ts* --fix"
+    "lint": "eslint src/**/*.ts* --fix",
+		"generate-icons": "node scripts/generate-icons.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "@adalove-ui/eslint-config": "*",
     "@adalove-ui/tokens": "*",
     "@adalove-ui/ts-config": "*",
+    "@svgr/cli": "^8.1.0",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "react": "^19.1.0",
