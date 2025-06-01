@@ -1,4 +1,4 @@
-import{B as b}from"./index-BxX9pEGp.js";import"./index-D4H_InIO.js";import"./jsx-runtime-BO8uF4Og.js";const x={title:"Example2/Button",component:b,parameters:{layout:"centered"},tags:["autodocs"],args:{children:"eai blz"}},r={args:{primary:!0,label:"Button"}},a={args:{label:"Button"}},e={args:{size:"large",label:"Button"}},s={args:{size:"small",label:"Button"}};var t,o,n;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+import{B as b}from"./index-CI1Qf9fH.js";import"./index-D4H_InIO.js";import"./jsx-runtime-BO8uF4Og.js";const x={title:"Example2/Button",component:b,parameters:{layout:"centered"},tags:["autodocs"],args:{children:"eai blz"}},r={args:{primary:!0,label:"Button"}},a={args:{label:"Button"}},e={args:{size:"large",label:"Button"}},s={args:{size:"small",label:"Button"}};var t,o,n;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
   args: {
     primary: true,
     label: 'Button'
