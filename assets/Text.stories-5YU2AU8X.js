@@ -1,0 +1,5 @@
+import{R as t}from"./index-D4H_InIO.js";import{T as l}from"./index-BsXjkngl.js";import{c as n}from"./index-BzZI5hGc.js";import"./jsx-runtime-BO8uF4Og.js";const d={title:"Example/Text",component:l,tags:["autodocs"],decorators:[s=>t.createElement("div",{style:{padding:"3rem",textAlign:"center",margin:"0 auto"}},t.createElement(s))],parameters:{layout:"fullscreen"},argTypes:{type:{control:"select",options:["display","largeTitle","title1","title2","title3","subtitle1","subtitle2","subtitle2Stronger","body1","body1Stronger","body2","body2Stronger","button","caption","overline"]},color:{control:"select",options:Object.keys(n)}},args:{children:"Olá mundo!",type:"body1",color:"coral100"}},e={args:{type:"display"}};var r,o,a;e.parameters={...e.parameters,docs:{...(r=e.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: {
+    type: 'display'
+  }
+}`,...(a=(o=e.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};const y=["Primary"];export{e as Primary,y as __namedExportsOrder,d as default};
