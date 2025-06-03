@@ -8,6 +8,8 @@ export * from './components/icons'
 // Define o tipo para os nomes dos ícones baseado nas chaves do objeto Icons
 export type IconName = keyof typeof Icons
 
+export const iconNames = Object.keys(Icons) as IconName[]
+
 // Tipo para as cores disponíveis
 export type ColorTokens = keyof typeof colors
 
@@ -25,16 +27,16 @@ export const Icon: FC<IconProps> = ({
   width,
   height,
   fill,
-  ...props
+  // ...props
 }) => {
-  const IconComponent = Icons[name]
+  const IconComponent = Icons[name] as FC<SVGProps<SVGSVGElement>>
 
   return (
     <IconComponent
       width={size || width || '1em'}
       height={size || height || '1em'}
       fill={fill ? colors[fill] : 'currentColor'}
-      {...props}
+      // {...props}
     />
   )
 }

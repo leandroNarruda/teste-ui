@@ -1,86 +1,189 @@
 import { FC, ReactNode } from 'react'
 import { styled } from '../styles'
+import { ColorTokens } from '@adalove-ui/icons'
+import { colors } from '@adalove-ui/tokens'
 
 const StyledText = styled('p', {
   fontFamily: '$default',
   lineHeight: '$base',
   margin: 0,
+  color: 'var(--color)',
 
   variants: {
     type: {
       display: {
-        fontWeight: 300,
-        fontSize: '$lg',
+        fontWeight: '$light',
+        fontSize: '$4xl',
+        lineHeight: '$lg',
+        letterSpacing: '$3xl',
+        '@mobile': {
+          fontSize: '$mob-4xl',
+        },
       },
       largeTitle: {
-        fontWeight: 700,
-        fontSize: '4.8rem',
+        fontWeight: '$bold',
+        fontSize: '$3xl',
+        lineHeight: '$lg',
+        letterSpacing: '$4xs',
+        '@mobile': {
+          fontSize: '$mob-3xl',
+        },
       },
       title1: {
-        fontWeight: 600,
-        fontSize: '3.2rem',
+        fontWeight: '$semibold',
+        fontSize: '$2xl',
+        lineHeight: '$lg',
+        letterSpacing: '$3xs',
+        '@mobile': {
+          fontSize: '$mob-2xl',
+        },
       },
       title2: {
-        fontWeight: 600,
-        fontSize: '2.8rem',
+        fontWeight: '$semibold',
+        fontSize: '$xl',
+        lineHeight: '$lg',
+        letterSpacing: '$sm',
+        '@mobile': {
+          fontSize: '$mob-xl',
+        },
       },
       title3: {
-        fontWeight: 700,
-        fontSize: '2.2rem',
+        fontWeight: '$bold',
+        fontSize: '$lg',
+        lineHeight: '$lg',
+        letterSpacing: '$sm',
+        '@mobile': {
+          fontSize: '$mob-lg',
+        },
       },
       subtitle1: {
-        fontWeight: 600,
-        fontSize: '2.0rem',
+        fontWeight: '$semibold',
+        fontSize: '$md',
+        lineHeight: '$lg',
+        letterSpacing: '$xs',
+        '@mobile': {
+          fontSize: '$mob-md',
+        },
       },
       subtitle2: {
-        fontWeight: 600,
-        fontSize: '1.6rem',
+        fontWeight: '$semibold',
+        fontSize: '$sm',
+        lineHeight: '$lg',
+        letterSpacing: '$3xs',
+        '@mobile': {
+          fontSize: '$mob-sm',
+        },
       },
       subtitle2Stronger: {
-        fontWeight: 800,
-        fontSize: '1.6rem',
+        fontWeight: '$extrabold',
+        fontSize: '$sm',
+        lineHeight: '$lg',
+        letterSpacing: '$2xs',
+        '@mobile': {
+          fontSize: '$mob-sm',
+        },
       },
       body1: {
-        fontWeight: 500,
-        fontSize: '1.6rem',
+        fontWeight: '$medium',
+        fontSize: '$sm',
+        lineHeight: '$lg',
+        letterSpacing: '$xl',
+        '@mobile': {
+          fontSize: '$mob-sm',
+        },
       },
       body1Stronger: {
-        fontWeight: 800,
-        fontSize: '1.6rem',
+        fontWeight: '$extrabold',
+        fontSize: '$sm',
+        lineHeight: '$md',
+        letterSpacing: '$xl',
+        '@mobile': {
+          fontSize: '$mob-sm',
+        },
       },
       body2: {
-        fontWeight: 500,
-        fontSize: '1.4rem',
+        fontWeight: '$medium',
+        fontSize: '$xs',
+        lineHeight: '$md',
+        letterSpacing: '$sm',
+        '@mobile': {
+          fontSize: '$mob-xs',
+        },
       },
       body2Stronger: {
-        fontWeight: 700,
-        fontSize: '1.4rem',
+        fontWeight: '$bold',
+        fontSize: '$xs',
+        lineHeight: '$md',
+        letterSpacing: '$sm',
+        '@mobile': {
+          fontSize: '$mob-xs',
+        },
       },
       button: {
-        fontWeight: 700,
-        fontSize: '1.4rem',
+        fontWeight: '$bold',
+        fontSize: '$xs',
+        lineHeight: '$sm',
+        letterSpacing: '$2xl',
         textTransform: 'uppercase',
+        '@mobile': {
+          fontSize: '$mob-xs',
+        },
       },
       caption: {
-        fontWeight: 400,
-        fontSize: '1.2rem',
+        fontWeight: '$regular',
+        fontSize: '$2xs',
+        lineHeight: '$sm',
+        letterSpacing: '$md',
+        '@mobile': {
+          fontSize: '$mob-2xs',
+        },
       },
       overline: {
-        fontWeight: 400,
-        fontSize: '1.2rem',
+        fontWeight: '$regular',
+        fontSize: '$3xs',
+        lineHeight: '$sm',
+        letterSpacing: '$3xl',
+        '@mobile': {
+          fontSize: '$mob-3xs',
+        },
       },
     },
   },
 
   defaultVariants: {
-    type: 'Body1',
+    type: 'display',
   },
 })
 
 export interface TextProps {
   children?: ReactNode
+  color?: ColorTokens
+  type?:
+    | 'display'
+    | 'largeTitle'
+    | 'title1'
+    | 'title2'
+    | 'title3'
+    | 'subtitle1'
+    | 'subtitle2'
+    | 'subtitle2Stronger'
+    | 'body1'
+    | 'body1Stronger'
+    | 'body2'
+    | 'body2Stronger'
+    | 'button'
+    | 'caption'
+    | 'overline'
 }
 
 export const Text: FC<TextProps> = (props) => {
-  return <StyledText type={'body1'}>{props.children}</StyledText>
+  return (
+    <StyledText
+      type={props.type}
+      color={'red'}
+      css={{ '--color': props.color ? colors[props.color] : 'inherit' }}
+    >
+      {props.children}
+    </StyledText>
+  )
 }
