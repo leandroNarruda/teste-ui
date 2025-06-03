@@ -1,5 +1,11 @@
 # @adalove-ui/tokens
 
+## 4.0.0
+
+### Major Changes
+
+- new components and tokens and config
+
 ## 3.0.0
 
 ### Major Changes
