@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@adalove-ui/react'
-import { colors } from '@adalove-ui/tokens';
+import { Tab } from '@adalove-ui/react'
 
 const meta = {
-  title: 'Example2/Button',
-  component: Button,
+  title: 'Example/Tab',
+  component: Tab,
   parameters: {
     layout: 'centered',
   },
 	argTypes: {
-		variant: {
+		tabs: [{variant: {
 			control: 'radio',
 			options: ['contained', 'outlined', 'text'],
 		},
@@ -787,29 +786,57 @@ const meta = {
 				"XSolido",
 				"Youtube"
 		],
-		},
-		color: {
-			control: 'select',
-			options: Object.keys(colors),
-		},
+		}}],
+		direction: {
+			control: 'radio',
+			options: ['vertical', 'horizontal'],
+		}
 	},
   tags: ['autodocs'],
-  args: { label: 'eai blz', color: 'azul100' },
-} satisfies Meta<typeof Button>;
+	args: {tabs: [{
+		variant: 'contained',
+		label: 'Borboletas',
+		leftIcon: 'BookSolido',
+		rightIcon: 'AlarmClockSolido',
+		disabled: false,
+	},{
+		variant: 'contained',
+		label: 'Bem-te-vis',
+		leftIcon: 'BookSolido',
+		rightIcon: 'AlarmClockSolido',
+		disabled: false,
+	},{
+		variant: 'contained',
+		label: 'Clique aqui',
+		leftIcon: 'BookSolido',
+		rightIcon: 'AlarmClockSolido',
+		disabled: false,
+	}], children: [<div>conteúdo 1</div>, <div>conteúdo 2</div>, <div>conteúdo 3</div>]}
+} satisfies Meta<typeof Tab>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Contained: Story = {
-	args: {
+	args: {tabs: [{
 		variant: 'contained',
-		label: 'Clique aqui',
-		color: 'azul100',
+		label: 'Borboletas',
 		leftIcon: 'BookSolido',
 		rightIcon: 'AlarmClockSolido',
-		onClick: () => {
-			alert('Clicou no botão')
-		},
 		disabled: false,
-	},
+	},{
+		variant: 'contained',
+		label: 'Pássaros',
+		leftIcon: 'BookSolido',
+		rightIcon: 'AlarmClockSolido',
+		disabled: false,
+	},{
+		variant: 'contained',
+		label: 'Mariposas',
+		leftIcon: 'BookSolido',
+		rightIcon: 'AlarmClockSolido',
+		disabled: false,
+	}],
+	children: [<div>conteúdo 1</div>, <div>conteúdo 2</div>, <div>conteúdo 3</div>],
+}
 };
